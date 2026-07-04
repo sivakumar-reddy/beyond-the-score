@@ -154,7 +154,7 @@ export default function ScenariosPage() {
   );
 }
 
-function FragilityChart({ stressed, naive, aware, baseT }: { stressed: Row[]; naive: Row[]; aware: Row[]; baseT: number }) {
+function FragilityChart({ stressed, naive, aware, baseT }: { stressed: Row[]; naive: Row; aware: Row; baseT: number }) {
   const W = 640, H = 190, pad = 14;
   const profits = stressed.map((r) => r[C.profit]);
   const vmax = Math.max(...profits, 0), vmin = Math.min(...profits, 0);
