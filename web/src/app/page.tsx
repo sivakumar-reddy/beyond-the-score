@@ -139,22 +139,20 @@ export default function Page() {
           <div className="panel-label">Your approval cutline (approve a loan if its predicted default risk is at or below)</div>
           <div className="slider-row">
             <span className="thresh-val green">{(thresh * 100).toFixed(0)}%</span>
-            <input type="range" min={0.01} max={0.99} step={0.01} value={thresh}
-              onChange={(e) => { touched.current = true; setThresh(parseFloat(e.target.value)); }} />
-          </div>
-          <div className="markers">
-            <div className="marker profit" style={{ left: (H.profit_opt_threshold * 100) + "%" }}>
+            <div className="track-wrap"><input type="range" min={0.01} max={0.99} step={0.01} value={thresh}
+              onChange={(e) => { touched.current = true; setThresh(parseFloat(e.target.value)); }} /><div className="markers">
+            <div className="marker profit" style={{ left: (((H.profit_opt_threshold - 0.01) / 0.98) * 100) + "%" }}>
               <div className="tick" />Profit-optimal {(H.profit_opt_threshold * 100).toFixed(0)}%
             </div>
-            <div className="marker acc" style={{ left: (H.acc_opt_threshold * 100) + "%" }}>
+            <div className="marker acc" style={{ left: (((H.acc_opt_threshold - 0.01) / 0.98) * 100) + "%" }}>
               <div className="tick" />Accuracy-optimal {(H.acc_opt_threshold * 100).toFixed(0)}%
             </div>
             {policiesReady && committed && (
-              <div className="marker committed" style={{ left: (committed.result.cutline * 100) + "%", top: "22px" }}>
+              <div className="marker committed" style={{ left: (((committed.result.cutline - 0.01) / 0.98) * 100) + "%", top: "22px" }}>
                 <div className="tick" />Committed {(committed.result.cutline * 100).toFixed(0)}%
               </div>
             )}
-          </div>
+          </div></div></div>
         </div>
 
         {/* Marginal cohort — the decision edge at the current cutline */}
@@ -278,7 +276,7 @@ const CSS = `
 .pc-btn:hover{border-color:var(--muted);}
 .pc-btn.primary{background:var(--amber);border-color:var(--amber);color:var(--bg);font-weight:600;}
 .pc-btn.primary:hover{background:var(--amber2);}
-.marker.committed{color:var(--amber2);font-weight:600;}
+.marker.committed{color:var(--amber2);font-weight:600;} .track-wrap{position:relative;flex:1;} .track-wrap input{width:100%;display:block;}
 .pc-marginal{grid-column:1 / -1;}
 .pc-mg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:14px;}
 .pc-mg-v{font-family:var(--font-news);font-size:24px;font-weight:500;display:block;}
