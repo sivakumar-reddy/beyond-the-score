@@ -1,4 +1,4 @@
-﻿# Scenario Studio Shock Band Sources
+# Scenario Studio Shock Band Sources
 
 Each shock band in Scenario Studio is an assumption carried with a band. This file records the sources each band is anchored to.
 
@@ -8,7 +8,7 @@ Each shock band in Scenario Studio is an assumption carried with a band. This fi
   https://www.federalreserve.gov/publications/2026-stress-test-scenarios.htm
 - Federal Reserve Bank of St. Louis (FRED), "Charge-Off Rate on Consumer Loans, All Commercial Banks" (CORCACBS), quarterly since 1985. Consumer loan charge-off rates more than doubled from pre-2008 levels to their 2009-2010 peak.
   https://fred.stlouisfed.org/series/CORCACBS
-  [VERIFY: insert exact pre-recession and peak quarterly values from the FRED chart before public launch]
+  Verified Jul 6, 2026: pre-recession quarterly values 1.77-2.80 percent across 2006-2007 (approx. 2.2 percent typical); peak 6.60 percent in Q1 2010 (6.56 in Q2 2010). Realized peak-to-pre-recession multiplier approx. 3x.
 
 Interpretation: the severe ceiling of x1.7 on predicted default probability is conservative relative to the realized Great Recession charge-off multiplier.
 
@@ -16,7 +16,7 @@ Interpretation: the severe ceiling of x1.7 on predicted default probability is c
 
 - Federal funds target rate history (FRED, FEDFUNDS). Observed hiking cycles: 2004-2006 raised the target by +4.25pp; 2022-2023 raised it from 0-0.25% to 5.25-5.50% (+5.25pp).
   https://fred.stlouisfed.org/series/FEDFUNDS
-  [VERIFY: confirm both cycle magnitudes on the FRED chart before public launch]
+  Verified Jul 6, 2026: 2004-2006 cycle +4.25pp (1.00 to 5.25 percent); 2022-2023 cycle +5.25pp (0-0.25 to 5.25-5.50 percent).
 
 Interpretation: the full band sits within a single observed Fed hiking cycle.
 
