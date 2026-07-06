@@ -99,7 +99,7 @@ export default function ScenariosPage() {
                     </button>
                   ))}
                 </div>
-                <div className="ss-band">{bandTxt} · assumption pending cited source</div>
+                <div className="ss-band">{bandTxt} · sourced assumption (SOURCES.md)</div>
               </div>
             );
           })}
